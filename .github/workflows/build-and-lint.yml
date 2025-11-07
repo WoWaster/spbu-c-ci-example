@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: Check format
         run: |
-          find . -type f -name "*.c" -or -name "*.h" | xargs clang-format --style=file --dry-run -Werror
+          find . -type f -name "*.c" -or -name "*.h" | xargs clang-format-18 --style=file --dry-run -Werror
       - name: Configure
         run: |
           # -DCMAKE_EXPORT_COMPILE_COMMANDS=ON is important for clang-tidy
@@ -21,4 +21,4 @@ jobs:
           cmake --build build
       - name: Lint
         run: |
-          run-clang-tidy -p=build
+          run-clang-tidy-18 -p=build
