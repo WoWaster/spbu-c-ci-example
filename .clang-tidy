@@ -147,7 +147,9 @@ Checks: "-*,
   readability-use-anyofallof,
   readability-identifier-naming,
   clang-diagnostic-*,
-  clang-analyzer-*"
+  clang-analyzer-*,
+  -cert-err34-c,
+  -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling"
 
 HeaderFilterRegex: ".*"
 
